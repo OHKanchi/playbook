@@ -73,5 +73,8 @@ const explorers = [
    const sumaEx = explorers.reduce((red, element) => red + element.exercises_completed, 0)
    console.log(sumaEx)
 
-   const exFinTrue = explorers.some((finish) => finish.frontend.exercisesFinished === true)
-   console.log("Alguine ya terminó sus ejercicios FrontEnd " + exFinTrue)
+   const exFinTrue = explorers.some(finish => finish.missions.frontend.exercisesFinished === true)
+   console.log("¿Alguien ya terminó sus ejercicios FrontEnd? " + exFinTrue)
+   
+   const OnbTr = explorers.every(tr => tr.missions.onboarding.isFinished === true)
+   console.log(`¿Todos los alumnos finalizaron el onboarding?: ${OnbTr}`)
